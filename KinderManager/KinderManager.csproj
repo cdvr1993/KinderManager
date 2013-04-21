@@ -44,10 +44,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumno-Padres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumno-Padres.Designer.cs">
+      <DependentUpon>Alumno-Padres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alumno.cs" />
+    <Compile Include="BuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarUsuario.Designer.cs">
+      <DependentUpon>BuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MostrarUsuario.Designer.cs">
+      <DependentUpon>MostrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Padres.cs" />
     <Compile Include="Pagos.cs" />
+    <Compile Include="Procesos_Alumno.cs" />
     <Compile Include="Pruebas.cs" />
+    <Compile Include="RegistrarUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RegistrarUsuario.Designer.cs">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAlumnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReporteAlumnos.Designer.cs">
+      <DependentUpon>ReporteAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sql.cs" />
+    <Compile Include="UsuarioPadres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsuarioPadres.Designer.cs">
+      <DependentUpon>UsuarioPadres.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +106,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alumno-Padres.resx">
+      <DependentUpon>Alumno-Padres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarUsuario.resx">
+      <DependentUpon>BuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarUsuario.resx">
+      <DependentUpon>MostrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,6 +130,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistrarUsuario.resx">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAlumnos.resx">
+      <DependentUpon>ReporteAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioPadres.resx">
+      <DependentUpon>UsuarioPadres.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
