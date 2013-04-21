@@ -44,12 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno-Padres.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Alumno-Padres.Designer.cs">
-      <DependentUpon>Alumno-Padres.cs</DependentUpon>
-    </Compile>
     <Compile Include="Alumno.cs" />
     <Compile Include="BuscarUsuario.cs">
       <SubType>Form</SubType>
@@ -75,7 +69,6 @@
     <Compile Include="MostrarUsuario.Designer.cs">
       <DependentUpon>MostrarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Padres.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="Procesos_Alumno.cs" />
     <Compile Include="Pruebas.cs" />
@@ -106,9 +99,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Alumno-Padres.resx">
-      <DependentUpon>Alumno-Padres.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BuscarUsuario.resx">
       <DependentUpon>BuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
