@@ -25,9 +25,18 @@
         /// el contenido del método con el editor de código.
         /// </summary>
         private void InitializeComponent () {
-            this.components = new System.ComponentModel.Container ();
+            this.SuspendLayout();
+            // 
+            // VentanaPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "VentanaPrincipal";
+            this.ShowIcon = false;
+            this.Text = "Kinder Manager";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

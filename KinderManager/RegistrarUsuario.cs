@@ -131,7 +131,7 @@ namespace KinderManager
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
-           // Form1.main.Controls.Add(new wUsuario());
+            VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
         }
 
         private void reestablecer_Controles()

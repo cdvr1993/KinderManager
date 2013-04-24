@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.tablaUser = new System.Windows.Forms.DataGridView();
-            this.lblDatosAlumno = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbGrado = new System.Windows.Forms.ComboBox();
-            this.lblGrado = new System.Windows.Forms.Label();
-            this.lblGrupo = new System.Windows.Forms.Label();
-            this.cmbGrupo = new System.Windows.Forms.ComboBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +38,14 @@
             this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colonia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDatosAlumno = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbGrado = new System.Windows.Forms.ComboBox();
+            this.lblGrado = new System.Windows.Forms.Label();
+            this.lblGrupo = new System.Windows.Forms.Label();
+            this.cmbGrupo = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,66 @@
             this.tablaUser.ReadOnly = true;
             this.tablaUser.Size = new System.Drawing.Size(1013, 239);
             this.tablaUser.TabIndex = 5;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellidos";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 150;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // Nacimiento
+            // 
+            this.Nacimiento.HeaderText = "Nacimiento";
+            this.Nacimiento.Name = "Nacimiento";
+            this.Nacimiento.ReadOnly = true;
+            this.Nacimiento.Width = 120;
+            // 
+            // Sangre
+            // 
+            this.Sangre.HeaderText = "Tipo Sangre";
+            this.Sangre.Name = "Sangre";
+            this.Sangre.ReadOnly = true;
+            // 
+            // Grado
+            // 
+            this.Grado.HeaderText = "Grado";
+            this.Grado.Name = "Grado";
+            this.Grado.ReadOnly = true;
+            this.Grado.Width = 50;
+            // 
+            // Grupo
+            // 
+            this.Grupo.HeaderText = "Grupo";
+            this.Grupo.Name = "Grupo";
+            this.Grupo.ReadOnly = true;
+            this.Grupo.Width = 50;
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
+            this.Calle.Width = 150;
+            // 
+            // Colonia
+            // 
+            this.Colonia.HeaderText = "Colonia";
+            this.Colonia.Name = "Colonia";
+            this.Colonia.ReadOnly = true;
+            // 
+            // Tel
+            // 
+            this.Tel.HeaderText = "Teléfono";
+            this.Tel.Name = "Tel";
+            this.Tel.ReadOnly = true;
             // 
             // lblDatosAlumno
             // 
@@ -160,66 +220,7 @@
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellidos";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 150;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // Nacimiento
-            // 
-            this.Nacimiento.HeaderText = "Nacimiento";
-            this.Nacimiento.Name = "Nacimiento";
-            this.Nacimiento.ReadOnly = true;
-            this.Nacimiento.Width = 120;
-            // 
-            // Sangre
-            // 
-            this.Sangre.HeaderText = "Tipo Sangre";
-            this.Sangre.Name = "Sangre";
-            this.Sangre.ReadOnly = true;
-            // 
-            // Grado
-            // 
-            this.Grado.HeaderText = "Grado";
-            this.Grado.Name = "Grado";
-            this.Grado.ReadOnly = true;
-            this.Grado.Width = 50;
-            // 
-            // Grupo
-            // 
-            this.Grupo.HeaderText = "Grupo";
-            this.Grupo.Name = "Grupo";
-            this.Grupo.ReadOnly = true;
-            this.Grupo.Width = 50;
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.Name = "Calle";
-            this.Calle.ReadOnly = true;
-            this.Calle.Width = 150;
-            // 
-            // Colonia
-            // 
-            this.Colonia.HeaderText = "Colonia";
-            this.Colonia.Name = "Colonia";
-            this.Colonia.ReadOnly = true;
-            // 
-            // Tel
-            // 
-            this.Tel.HeaderText = "Teléfono";
-            this.Tel.Name = "Tel";
-            this.Tel.ReadOnly = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // ReporteAlumnos
             // 

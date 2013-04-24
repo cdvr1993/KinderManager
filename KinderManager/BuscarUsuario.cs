@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace KinderManager
 {
-    public partial class BuscarUsuario : Form
+    public partial class BuscarUsuario : UserControl
     {
         Alumno alumno = null;
         Sql con = new Sql();
@@ -45,7 +45,7 @@ namespace KinderManager
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
-            //Form1.main.Controls.Add(new wUsuario());
+            VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

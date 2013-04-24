@@ -215,6 +215,37 @@ namespace KinderManager
             return true;
         }
 
+        public Boolean generarPagosAnuales () {
+            Sql con = new Sql (), con1 = new Sql();
+            try {
+                SqlDataReader r = con.getReader ( String.Format ( "Select * from alumno inner join informacion_pago on " +
+                    "modalidad_pago=id_modalidad" ) ), r1;
+                while (r.Read ()) {
+                    int id = 0, lim = 0;
+                    //  Se obtiene cuantos pagos se harán al año.
+                    if ((int) r["id_modalidad"] == 0 || (int) r["id_modalidad"] == 2) lim = 11;
+                    else lim = 10;
+                    //  Va a generar cada uno de los pagos que se deberán a hacer en el año.
+                    for (int i = 0, mes = 8 , year = DateTime.Now.Year; i < lim ; i++, mes++) {
+                        r1 = con1.getReader ( String.Format ( "Select max(id_pago) from pagos" ) );
+                        r1.Read ();
+                        if (!r1.IsDBNull ( 0 ))
+                            id = (int) r1[0];
+                        r1.Close ();
+                        DateTime fecha = new DateTime ( year, mes, 1 );
+                        con.executeQuery ( String.Format ( "Insert into pagos values({0:g},{1:g},{2:f},{3:f},{4:g},{5:f},{6:yyyy-MM-dd}," +
+                            "{7:g}", id, "Colegiatura", r["colegiatura"], 0, "Ninguno", r["Colegiatura"], fecha, 0 ) );
+                        if (mes == 12) {
+                            mes = 0;
+                            year++;
+                        }
+                    }
+                }
+            } catch (SqlException) {
+            }
+            return false;
+        }
+
         //A continuación están todo los GET'S de los miembros de la clase.
         public int IdPago
         {
