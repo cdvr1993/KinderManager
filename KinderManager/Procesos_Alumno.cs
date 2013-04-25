@@ -25,8 +25,8 @@ namespace KinderManager
                     id_alumno = (int)r[0] + 1;
                 r.Close();
 
-                if (con.executeQuery(String.Format("INSERT INTO ALUMNO VALUES ({0:g},'{1:g}','{2:g}','{3:yyyy-MM-dd}','{4:g}','{5:g}','{6:g}','{7:g}',NULL, NULL,{10:g},'{11:g}',{12:g})"
-                   , id_alumno, Nombre, Apellido, Nacimiento, Sangre, Calle, Colonia, Telefono, null, null, grado, grupo, mod_pago)))
+                if (con.executeQuery(String.Format("INSERT INTO ALUMNO VALUES ({0:g},'{1:g}','{2:g}','{3:yyyy-MM-dd}','{4:g}','{5:g}','{6:g}','{7:g}',NULL, NULL,{10:g},'{11:g}',{12:g}, NULL)"
+                   , id_alumno, Nombre, Apellido, Nacimiento, Sangre, Calle, Colonia, Telefono, null, null, grado, grupo, mod_pago, null)))
                 {
                     con.closeConnection();
                     con = new Sql();
