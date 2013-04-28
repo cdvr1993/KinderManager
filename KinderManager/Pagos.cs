@@ -18,7 +18,7 @@ namespace KinderManager
 
         public Pagos() { }
 
-        private static Pagos getInformation(int id)
+        public static Pagos getInformation(int id)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace KinderManager
             return null;
         }
 
-        public List<Pagos> getAllPagosFromStudentInRange(int id, DateTime first, DateTime final)
+        public static List<Pagos> getAllPagosFromStudentInRange(int id, DateTime first, DateTime final)
         {
             //Buscara todos los pagos de un estudiante en un rango de fechas.
             try
@@ -100,7 +100,7 @@ namespace KinderManager
             return null;
         }
 
-        public List<Pagos> getAllPagosByDate(DateTime date)
+        public static List<Pagos> getAllPagosByDate(DateTime date)
         {
             //Obtiene los pagos de una fecha en especifico y devuelve la lista.
             try
@@ -125,7 +125,7 @@ namespace KinderManager
             return null;
         }
 
-        public List<Pagos> getAllPagosByRange(DateTime first, DateTime final)
+        public static List<Pagos> getAllPagosByRange(DateTime first, DateTime final)
         {
             //Esta función devuelve los pagos en un rango determinado de fechas, puede usarse para ver los pagos que van del mes en curso.
             try
@@ -187,62 +187,92 @@ namespace KinderManager
             return false;
         }
 
-        public Boolean realizarPago(String concepto, String conceptoDescuento, float subtotal, float descuento, float total, DateTime date, Boolean liquidado)
-        {
-            try
-            {
+        public static Boolean realizarPago(int idAlumno, String concepto, String conceptoDescuento, float subtotal, float descuento,
+            float total, DateTime date){
+            try{
                 //Recibe todos los valores del pago para registrarlo en la BD.
                 Sql con = new Sql();
                 SqlDataReader r = con.getReader("Select max(id_pago) from pagos");
                 r.Read();
                 int id = 0;
                 if (!r.IsDBNull(0))
-                    id = (int)r[0];
+                    id = (int) r[0] + 1;
                 r.Close();
-                int liquidadoBit = (liquidado) ? 1 : 0;
-                if (con.executeQuery(String.Format("Insert into pagos values({0:g},'{1:g}',{2:f},{3:f},'{4:g}',{5:f},'{6:yyyy-MM-dd}',{7:g})"
-                    , id, concepto, subtotal, descuento, conceptoDescuento, total, date, liquidadoBit)))
-                {
-                    MessageBox.Show("Pago realizado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (con.executeQuery ( String.Format ( "Insert into pagos values({0:g},'{1:g}',{2:f},{3:f},'{4:g}',{5:f},'{6:yyyy-MM-dd}',{7:g})",
+                    id, concepto, subtotal, descuento, conceptoDescuento, total, date, 0 ) )){
+                        if (con.executeQuery ( String.Format ( "Insert into [pago-alumno] values({0:g},{1:g})", id, idAlumno ) )) return true;
                 }
                 con.closeConnection();
             }
-            catch (SqlException e)
-            {
+            catch (SqlException e){
                 //Program.log.WriteLine(e.Message);
-                return false;
             }
-            return true;
+            return false;
         }
 
-        public Boolean generarPagosAnuales () {
+        public static Boolean inscribirAlumno (int idAlumno){
+            try {
+                Sql con = new Sql ();
+                SqlDataReader r = con.getReader ( String.Format ( "Select activo from alumno where id_alumno={0:g}", idAlumno ) );
+                r.Read ();
+                if (!r.IsDBNull ( 0 )) {
+                    if (Convert.ToInt32 ( r["activo"] ) == 1) {
+                        r.Close ();
+                        r = con.getReader ( String.Format ( "Select fecha from pagos inner join [pago-alumno] on pagos.id_pago=" +
+                            "[pago-alumno].id_pago where id_alumno={0:g}", idAlumno ) );
+                        r.Read ();
+                        if (r.GetDateTime ( 0 ).Year == DateTime.Now.Year) {
+                            MessageBox.Show ( "Error ese alumno ya pago la inscripción de este año", "Error", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error );
+                            return false;
+                        }
+                    }
+                }
+                r.Close ();
+                r = con.getReader ( String.Format ( "Select inscripcion from alumno inner join informacion_pago on " +
+                    "modalidad_pago=id_modalidad where id_alumno={0:g}", idAlumno ) );
+                r.Read();
+                float pago = (float) Convert.ToDouble ( r["inscripcion"] );
+                r.Close();
+                if (realizarPago (idAlumno, "Inscripción", "Ninguno", pago, 0, pago, DateTime.Now )) {
+                    if (con.executeQuery ( String.Format ( "Update alumno set activo=1 where id_alumno={0:g}", idAlumno ) )) {
+                        MessageBox.Show ( "Inscripción realizada con éxito", "Alumno inscrito", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information );
+                        return true;
+                    }
+                }
+            } catch (SqlException) { }
+            MessageBox.Show ( "Error al realizar la inscripción", "Alumno no inscrito", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error );
+            return false;
+        }
+
+        public static Boolean generarPagosAnuales () {
             Sql con = new Sql (), con1 = new Sql();
             try {
                 SqlDataReader r = con.getReader ( String.Format ( "Select * from alumno inner join informacion_pago on " +
-                    "modalidad_pago=id_modalidad" ) ), r1;
+                    "modalidad_pago=id_modalidad" ) );
                 while (r.Read ()) {
-                    int id = 0, lim = 0;
+                    if (r.IsDBNull ( 13 ) || !r.GetBoolean(13)) continue;   //  Comprueba que haya pagado la inscripción.
+                    int lim = 0;
                     //  Se obtiene cuantos pagos se harán al año.
                     if ((int) r["id_modalidad"] == 0 || (int) r["id_modalidad"] == 2) lim = 11;
                     else lim = 10;
                     //  Va a generar cada uno de los pagos que se deberán a hacer en el año.
-                    for (int i = 0, mes = 8 , year = DateTime.Now.Year; i < lim ; i++, mes++) {
-                        r1 = con1.getReader ( String.Format ( "Select max(id_pago) from pagos" ) );
-                        r1.Read ();
-                        if (!r1.IsDBNull ( 0 ))
-                            id = (int) r1[0];
-                        r1.Close ();
+                    for (int i = 0, mes = 8, year = DateTime.Now.Year ; i < lim ; i++, mes++) {
                         DateTime fecha = new DateTime ( year, mes, 1 );
-                        con.executeQuery ( String.Format ( "Insert into pagos values({0:g},{1:g},{2:f},{3:f},{4:g},{5:f},{6:yyyy-MM-dd}," +
-                            "{7:g}", id, "Colegiatura", r["colegiatura"], 0, "Ninguno", r["Colegiatura"], fecha, 0 ) );
+                        realizarPago (Convert.ToInt32(r["id_alumno"]), "Colegiatura", "Ninguno", (float) Convert.ToDouble(r["colegiatura"]), 0,
+                            (float) Convert.ToDouble(r["colegiatura"]), fecha );
                         if (mes == 12) {
                             mes = 0;
                             year++;
                         }
                     }
                 }
-            } catch (SqlException) {
-            }
+                con.closeConnection ();
+                con1.closeConnection ();
+                return true;
+            } catch (SqlException) { }
             return false;
         }
 
@@ -250,24 +280,16 @@ namespace KinderManager
         public int IdPago
         {
             //No permitiremos modificar ID'S por eso solo tiene GET.
-            get
-            {
-                return this.idPago;
-            }
+            get { return this.idPago; }
         }
 
         public String Concepto
         {
-            get
-            {
-                return this.concepto;
-            }
-            set
-            {
+            get { return this.concepto; }
+            set{
                 String tmp = this.concepto;
                 this.concepto = value;
-                if (!actualizarPago("concepto"))
-                {
+                if (!actualizarPago("concepto")){
                     MessageBox.Show("Imposible actualizar el concepto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.concepto = tmp;
                 }
@@ -276,16 +298,11 @@ namespace KinderManager
 
         public String ConceptoDescuento
         {
-            get
-            {
-                return this.conceptoDescuento;
-            }
-            set
-            {
+            get { return this.conceptoDescuento; }
+            set{
                 String tmp = this.conceptoDescuento;
                 this.conceptoDescuento = value;
-                if (!actualizarPago("concepto_descuento"))
-                {
+                if (!actualizarPago("concepto_descuento")){
                     MessageBox.Show("Imposible actualizar el Concepto del descuento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.conceptoDescuento = tmp;
                 }
@@ -294,16 +311,11 @@ namespace KinderManager
 
         public float Subtotal
         {
-            get
-            {
-                return this.subtotal;
-            }
-            set
-            {
+            get { return this.subtotal; }
+            set{
                 float tmp = this.subtotal;
                 this.subtotal = value;
-                if (!actualizarPago("subtotal"))
-                {
+                if (!actualizarPago("subtotal")){
                     MessageBox.Show("Imposible actualizar el subtotal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.subtotal = tmp;
                 }
@@ -312,16 +324,11 @@ namespace KinderManager
 
         public float Descuento
         {
-            get
-            {
-                return this.descuento;
-            }
-            set
-            {
+            get { return this.descuento; }
+            set{
                 float tmp = this.descuento;
                 this.descuento = value;
-                if (!actualizarPago("descuento"))
-                {
+                if (!actualizarPago("descuento")){
                     MessageBox.Show("Imposible actualizar el descuento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.descuento = tmp;
                 }
@@ -330,16 +337,12 @@ namespace KinderManager
 
         public float Total
         {
-            get
-            {
-                return this.total;
-            }
+            get { return this.total; }
             set
             {
                 float tmp = this.total;
                 this.total = value;
-                if (!actualizarPago("total"))
-                {
+                if (!actualizarPago("total")){
                     MessageBox.Show("Imposible actualizar el total", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.total = tmp;
                 }
@@ -348,16 +351,11 @@ namespace KinderManager
 
         public DateTime Date
         {
-            get
-            {
-                return this.date;
-            }
-            set
-            {
+            get { return this.date; }
+            set{
                 DateTime tmp = this.date;
                 this.date = value;
-                if (!actualizarPago("date"))
-                {
+                if (!actualizarPago("date")){
                     MessageBox.Show("Imposible actualizar la fecha", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.date = tmp;
                 }
@@ -366,16 +364,11 @@ namespace KinderManager
 
         public Boolean Liquidado
         {
-            get
-            {
-                return this.liquidado;
-            }
-            set
-            {
+            get { return this.liquidado; }
+            set{
                 Boolean tmp = this.liquidado;
                 this.liquidado = value;
-                if (!actualizarPago("liquidado"))
-                {
+                if (!actualizarPago("liquidado")){
                     MessageBox.Show("Imposible actualizar la liquidez del pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.liquidado = tmp;
                 }

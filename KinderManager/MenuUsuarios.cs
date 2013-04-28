@@ -47,7 +47,7 @@ namespace KinderManager
         }
 
         private void salirToolStripMenuItem_Click ( object sender, EventArgs e ) {
-            Environment.Exit ( 0 );
+            Application.Exit ();
         }
 
         private void regresarToolStripMenuItem_Click ( object sender, EventArgs e ) {

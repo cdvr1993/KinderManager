@@ -28,6 +28,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnPagos = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnPadres = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnUsuarios
@@ -50,6 +51,7 @@
             this.btnPagos.TabIndex = 1;
             this.btnPagos.Text = "Pagos";
             this.btnPagos.UseVisualStyleBackColor = true;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // menuStrip1
             // 
@@ -59,10 +61,22 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // btnPadres
+            // 
+            this.btnPadres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPadres.Location = new System.Drawing.Point(265, 218);
+            this.btnPadres.Name = "btnPadres";
+            this.btnPadres.Size = new System.Drawing.Size(197, 65);
+            this.btnPadres.TabIndex = 3;
+            this.btnPadres.Text = "Padres";
+            this.btnPadres.UseVisualStyleBackColor = true;
+            this.btnPadres.Click += new System.EventHandler(this.btnPadres_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnPadres);
             this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.menuStrip1);
@@ -78,5 +92,6 @@
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnPagos;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button btnPadres;
     }
 }

@@ -14,9 +14,11 @@ namespace KinderManager
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles ();
+            Application.SetCompatibleTextRenderingDefault ( false );
             Application.Run ( new VentanaPrincipal () );
+            Environment.Exit ( 0 );
+            //new Pruebas ();
         }
     }
 } 

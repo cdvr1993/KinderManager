@@ -17,8 +17,18 @@ namespace KinderManager
         }
 
         private void btnUsuarios_Click ( object sender, EventArgs e ) {
-            VentanaPrincipal.Interfaz.Controls.Clear ();
+            Dispose ();
             VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
+        }
+
+        private void btnPagos_Click ( object sender, EventArgs e ) {
+            Dispose ();
+            VentanaPrincipal.Interfaz.Controls.Add ( new MenuPagos () );
+        }
+
+        private void btnPadres_Click ( object sender, EventArgs e ) {
+            Dispose ();
+            VentanaPrincipal.Interfaz.Controls.Add ( new Ventana_Padres () );
         }
     }
 }

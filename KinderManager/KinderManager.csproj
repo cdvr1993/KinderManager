@@ -13,12 +13,13 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -44,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonos.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BuscarUsuario.cs">
       <SubType>UserControl</SubType>
@@ -62,6 +64,12 @@
     </Compile>
     <Compile Include="EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCuenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EstadoCuenta.Designer.cs">
+      <DependentUpon>EstadoCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>UserControl</SubType>
@@ -87,9 +95,11 @@
     <Compile Include="MostrarUsuario.Designer.cs">
       <DependentUpon>MostrarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Padres.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="Procesos_Alumno.cs" />
     <Compile Include="Pruebas.cs" />
+    <Compile Include="Referencia.cs" />
     <Compile Include="RegistrarUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +127,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventana_P.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventana_P.Designer.cs">
+      <DependentUpon>Ventana_P.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventana_Padres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventana_Padres.designer.cs">
+      <DependentUpon>Ventana_Padres.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BuscarUsuario.resx">
       <DependentUpon>BuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadoCuenta.resx">
+      <DependentUpon>EstadoCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -158,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_P.resx">
+      <DependentUpon>Ventana_P.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_Padres.resx">
+      <DependentUpon>Ventana_Padres.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

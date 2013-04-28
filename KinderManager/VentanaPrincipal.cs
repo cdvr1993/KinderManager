@@ -23,7 +23,7 @@ namespace KinderManager
         }
 
         void VentanaPrincipal_FormClosed ( object sender, FormClosedEventArgs e ) {
-            Environment.Exit ( 0 );
+            Application.Exit ();
         }
 
         void VentanaPrincipal_ControlAdded ( object sender, ControlEventArgs e ) {

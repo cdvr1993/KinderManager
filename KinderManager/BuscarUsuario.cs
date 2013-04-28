@@ -45,78 +45,65 @@ namespace KinderManager
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
-            VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
+            if (modo == 1 || modo == 2 || modo == 3 || modo == 4) VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
+            else if (modo == 5 || modo == 6) VentanaPrincipal.Interfaz.Controls.Add ( new MenuPagos () );
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (cmbUser.SelectedItem == null)
-            {
+            if (cmbUser.SelectedItem == null){
                 MessageBox.Show("No seleccionó nada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Poner en el Excel
                 return;
             }
-
             String row = cmbUser.SelectedItem.ToString();
-
-            if (row.Equals("Sin Resultado"))
-            {
+            if (row.Equals("Sin Resultado")){
                 MessageBox.Show("No hay usuario a buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Poner en el excel
                 return;
             }
-
             String idUser = null;
-
-            foreach (char algo in row)
-            {
-                if (algo == '-')
-                {
+            foreach (char algo in row){
+                if (algo == '-'){
                     break;
                 }
-                else
-                {
+                else{
                     idUser = idUser + algo;
                 }
             }
-
             r = con.getReader("SELECT * FROM Alumno WHERE Id_alumno = " + idUser);
             r.Read();
             alumno = new Alumno((int)r["Id_alumno"]);
             r.Close();
-
-            // Y aquí empezar a hacer el llamado de Actualizar, Mostrar o Eliminar
-
             switch (modo)  // Aquí se ve si se mandan llamar ActualizarUsuario, MostrarUsuario o EliminarUsuario
             {
                 case 1:
-                    {
-                        this.Hide(); //Dispose (); 
-                        new EditarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId())));
-                        //Form1.main.Controls.Add(new EliminarUsuario(alumno));
-                        break;
-                    }
+                    Dispose (); 
+                    new EditarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId())));
+                    break;
                 case 2:
-                    {
-                        this.Hide(); //Dispose (); 
-                        new MostrarUsuario(alumno);
-                        //Form1.main.Controls.Add(new EliminarUsuario(alumno));
-                        break;
-                    }
+                    Dispose (); 
+                    new MostrarUsuario(alumno);
+                    break;
                 case 3:
-                    {
-                        this.Hide(); //Dispose (); 
-                        new EliminarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId())));
-                        //Form1.main.Controls.Add(new EliminarUsuario(alumno));
-                        break;
-                    }
-
+                    Dispose (); 
+                    new EliminarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId())));
+                    break;
                 case 4:
-                    {
-                        this.Hide(); //Dispose (); 
-                        new UsuarioPadres(alumno);
-                        //Form1.main.Controls.Add(new EliminarUsuario(alumno));
-                        break;
+                    Dispose (); 
+                    new UsuarioPadres(alumno);
+                    break;
+                case 5:
+                    if (MessageBox.Show ( "¿Seguro que desea dar de alta a este alumno: " + alumno.getNombre () + " " + alumno.getApellido(),
+                        "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question ) == DialogResult.Yes) {
+                            if (!Pagos.inscribirAlumno ( alumno.getId () )) return;
                     }
-            }
+                    Dispose ();
+                    VentanaPrincipal.Interfaz.Controls.Add ( new MenuPagos () );
+                    break;
+                case 6:
+                    Dispose ();
+                    VentanaPrincipal.Interfaz.Controls.Add ( new EstadoCuenta ( alumno ) );
+                    break;
             }
         }
+    }
 }
