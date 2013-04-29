@@ -46,7 +46,7 @@
             this.chkCopiaActa = new System.Windows.Forms.CheckBox();
             this.lblInstrucciones = new System.Windows.Forms.Label();
             this.chkActa = new System.Windows.Forms.CheckBox();
-            this.cmbGrupo = new System.Windows.Forms.ComboBox();
+            this.cmbGroup = new System.Windows.Forms.ComboBox();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.cmbPago = new System.Windows.Forms.ComboBox();
             this.cmbGrado = new System.Windows.Forms.ComboBox();
@@ -278,7 +278,7 @@
             this.gpbAdmin.Controls.Add(this.chkCopiaActa);
             this.gpbAdmin.Controls.Add(this.lblInstrucciones);
             this.gpbAdmin.Controls.Add(this.chkActa);
-            this.gpbAdmin.Controls.Add(this.cmbGrupo);
+            this.gpbAdmin.Controls.Add(this.cmbGroup);
             this.gpbAdmin.Controls.Add(this.lblGrupo);
             this.gpbAdmin.Controls.Add(this.cmbPago);
             this.gpbAdmin.Controls.Add(this.cmbGrado);
@@ -353,20 +353,20 @@
             this.chkActa.Text = "Acta";
             this.chkActa.UseVisualStyleBackColor = true;
             // 
-            // cmbGrupo
+            // cmbGroup
             // 
-            this.cmbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGrupo.FormattingEnabled = true;
-            this.cmbGrupo.Items.AddRange(new object[] {
+            this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGroup.FormattingEnabled = true;
+            this.cmbGroup.Items.AddRange(new object[] {
             "No",
             "A ",
             "B ",
             "C "});
-            this.cmbGrupo.Location = new System.Drawing.Point(107, 60);
-            this.cmbGrupo.Name = "cmbGrupo";
-            this.cmbGrupo.Size = new System.Drawing.Size(61, 24);
-            this.cmbGrupo.TabIndex = 21;
+            this.cmbGroup.Location = new System.Drawing.Point(107, 60);
+            this.cmbGroup.Name = "cmbGroup";
+            this.cmbGroup.Size = new System.Drawing.Size(61, 24);
+            this.cmbGroup.TabIndex = 21;
             // 
             // lblGrupo
             // 
@@ -515,7 +515,6 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // instrucciones
             // 
@@ -532,6 +531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1236, 375);
             this.Controls.Add(this.instrucciones);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -539,7 +539,7 @@
             this.Controls.Add(this.gpbAdmin);
             this.Controls.Add(this.gpbDatos);
             this.Name = "EditarUsuario";
-            this.Size = new System.Drawing.Size(1236, 375);
+            this.Text = "Modificar información de alumno";
             this.gpbDatos.ResumeLayout(false);
             this.gpbDatos.PerformLayout();
             this.gpbAdmin.ResumeLayout(false);
@@ -580,7 +580,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label instrucciones;
-        private System.Windows.Forms.ComboBox cmbGrupo;
+        private System.Windows.Forms.ComboBox cmbGroup;
         private System.Windows.Forms.CheckBox chkActa;
         private System.Windows.Forms.Label lblInstrucciones;
         private System.Windows.Forms.CheckBox chkCopiaActa;

@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.gpbDatosMadre = new System.Windows.Forms.GroupBox();
-            this.btnAceptarMadre = new System.Windows.Forms.Button();
-            this.cmbMadre = new System.Windows.Forms.ComboBox();
-            this.lblSelResMadre = new System.Windows.Forms.Label();
-            this.btnBuscarMadre = new System.Windows.Forms.Button();
-            this.txtApellidoMadre = new System.Windows.Forms.TextBox();
-            this.txtNombreMadre = new System.Windows.Forms.TextBox();
             this.lblDatosMadre = new System.Windows.Forms.Label();
+            this.txtNombreMadre = new System.Windows.Forms.TextBox();
+            this.txtApellidoMadre = new System.Windows.Forms.TextBox();
+            this.btnBuscarMadre = new System.Windows.Forms.Button();
+            this.lblSelResMadre = new System.Windows.Forms.Label();
+            this.cmbMadre = new System.Windows.Forms.ComboBox();
+            this.btnAceptarMadre = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.gpbDatosPadre = new System.Windows.Forms.GroupBox();
-            this.btnAceptarPadre = new System.Windows.Forms.Button();
             this.cmbPadre = new System.Windows.Forms.ComboBox();
             this.lblSelResPadre = new System.Windows.Forms.Label();
             this.btnBuscarPadre = new System.Windows.Forms.Button();
             this.txtApellidoPadre = new System.Windows.Forms.TextBox();
             this.txtNombrePadre = new System.Windows.Forms.TextBox();
             this.lblDatosPadre = new System.Windows.Forms.Label();
+            this.btnAceptarPadre = new System.Windows.Forms.Button();
             this.gpbDatosMadre.SuspendLayout();
             this.gpbDatosPadre.SuspendLayout();
             this.SuspendLayout();
@@ -66,36 +66,31 @@
             this.gpbDatosMadre.TabStop = false;
             this.gpbDatosMadre.Text = "Madre";
             // 
-            // btnAceptarMadre
+            // lblDatosMadre
             // 
-            this.btnAceptarMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarMadre.Location = new System.Drawing.Point(196, 283);
-            this.btnAceptarMadre.Name = "btnAceptarMadre";
-            this.btnAceptarMadre.Size = new System.Drawing.Size(148, 41);
-            this.btnAceptarMadre.TabIndex = 22;
-            this.btnAceptarMadre.Text = "Aceptar";
-            this.btnAceptarMadre.UseVisualStyleBackColor = true;
-            this.btnAceptarMadre.Click += new System.EventHandler(this.btnAceptarMadre_Click);
+            this.lblDatosMadre.AutoSize = true;
+            this.lblDatosMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosMadre.Location = new System.Drawing.Point(48, 25);
+            this.lblDatosMadre.Name = "lblDatosMadre";
+            this.lblDatosMadre.Size = new System.Drawing.Size(485, 24);
+            this.lblDatosMadre.TabIndex = 16;
+            this.lblDatosMadre.Text = "Ingrese el nombre y apellido de la mamá a buscar*";
             // 
-            // cmbMadre
+            // txtNombreMadre
             // 
-            this.cmbMadre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMadre.FormattingEnabled = true;
-            this.cmbMadre.Location = new System.Drawing.Point(79, 229);
-            this.cmbMadre.Name = "cmbMadre";
-            this.cmbMadre.Size = new System.Drawing.Size(426, 28);
-            this.cmbMadre.TabIndex = 21;
+            this.txtNombreMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreMadre.Location = new System.Drawing.Point(79, 62);
+            this.txtNombreMadre.Name = "txtNombreMadre";
+            this.txtNombreMadre.Size = new System.Drawing.Size(426, 35);
+            this.txtNombreMadre.TabIndex = 17;
             // 
-            // lblSelResMadre
+            // txtApellidoMadre
             // 
-            this.lblSelResMadre.AutoSize = true;
-            this.lblSelResMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelResMadre.Location = new System.Drawing.Point(137, 186);
-            this.lblSelResMadre.Name = "lblSelResMadre";
-            this.lblSelResMadre.Size = new System.Drawing.Size(306, 29);
-            this.lblSelResMadre.TabIndex = 20;
-            this.lblSelResMadre.Text = "Seleccione un resultado*";
+            this.txtApellidoMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoMadre.Location = new System.Drawing.Point(79, 103);
+            this.txtApellidoMadre.Name = "txtApellidoMadre";
+            this.txtApellidoMadre.Size = new System.Drawing.Size(426, 35);
+            this.txtApellidoMadre.TabIndex = 18;
             // 
             // btnBuscarMadre
             // 
@@ -108,31 +103,36 @@
             this.btnBuscarMadre.UseVisualStyleBackColor = true;
             this.btnBuscarMadre.Click += new System.EventHandler(this.btnBuscarMadre_Click);
             // 
-            // txtApellidoMadre
+            // lblSelResMadre
             // 
-            this.txtApellidoMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoMadre.Location = new System.Drawing.Point(79, 103);
-            this.txtApellidoMadre.Name = "txtApellidoMadre";
-            this.txtApellidoMadre.Size = new System.Drawing.Size(426, 35);
-            this.txtApellidoMadre.TabIndex = 18;
+            this.lblSelResMadre.AutoSize = true;
+            this.lblSelResMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelResMadre.Location = new System.Drawing.Point(137, 186);
+            this.lblSelResMadre.Name = "lblSelResMadre";
+            this.lblSelResMadre.Size = new System.Drawing.Size(306, 29);
+            this.lblSelResMadre.TabIndex = 20;
+            this.lblSelResMadre.Text = "Seleccione un resultado*";
             // 
-            // txtNombreMadre
+            // cmbMadre
             // 
-            this.txtNombreMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreMadre.Location = new System.Drawing.Point(79, 62);
-            this.txtNombreMadre.Name = "txtNombreMadre";
-            this.txtNombreMadre.Size = new System.Drawing.Size(426, 35);
-            this.txtNombreMadre.TabIndex = 17;
+            this.cmbMadre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMadre.FormattingEnabled = true;
+            this.cmbMadre.Location = new System.Drawing.Point(79, 229);
+            this.cmbMadre.Name = "cmbMadre";
+            this.cmbMadre.Size = new System.Drawing.Size(426, 28);
+            this.cmbMadre.TabIndex = 21;
             // 
-            // lblDatosMadre
+            // btnAceptarMadre
             // 
-            this.lblDatosMadre.AutoSize = true;
-            this.lblDatosMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosMadre.Location = new System.Drawing.Point(48, 25);
-            this.lblDatosMadre.Name = "lblDatosMadre";
-            this.lblDatosMadre.Size = new System.Drawing.Size(485, 24);
-            this.lblDatosMadre.TabIndex = 16;
-            this.lblDatosMadre.Text = "Ingrese el nombre y apellido de la mamá a buscar*";
+            this.btnAceptarMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarMadre.Location = new System.Drawing.Point(196, 283);
+            this.btnAceptarMadre.Name = "btnAceptarMadre";
+            this.btnAceptarMadre.Size = new System.Drawing.Size(148, 41);
+            this.btnAceptarMadre.TabIndex = 22;
+            this.btnAceptarMadre.Text = "Aceptar";
+            this.btnAceptarMadre.UseVisualStyleBackColor = true;
+            this.btnAceptarMadre.Click += new System.EventHandler(this.btnAceptarMadre_Click);
             // 
             // btnRegresar
             // 
@@ -143,7 +143,6 @@
             this.btnRegresar.TabIndex = 16;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // gpbDatosPadre
             // 
@@ -161,17 +160,6 @@
             this.gpbDatosPadre.TabIndex = 17;
             this.gpbDatosPadre.TabStop = false;
             this.gpbDatosPadre.Text = "Padre";
-            // 
-            // btnAceptarPadre
-            // 
-            this.btnAceptarPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarPadre.Location = new System.Drawing.Point(196, 283);
-            this.btnAceptarPadre.Name = "btnAceptarPadre";
-            this.btnAceptarPadre.Size = new System.Drawing.Size(148, 41);
-            this.btnAceptarPadre.TabIndex = 22;
-            this.btnAceptarPadre.Text = "Aceptar";
-            this.btnAceptarPadre.UseVisualStyleBackColor = true;
-            this.btnAceptarPadre.Click += new System.EventHandler(this.btnAceptarPadre_Click);
             // 
             // cmbPadre
             // 
@@ -230,15 +218,27 @@
             this.lblDatosPadre.TabIndex = 16;
             this.lblDatosPadre.Text = "Ingrese el nombre y apellido del papá a buscar*";
             // 
+            // btnAceptarPadre
+            // 
+            this.btnAceptarPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarPadre.Location = new System.Drawing.Point(196, 283);
+            this.btnAceptarPadre.Name = "btnAceptarPadre";
+            this.btnAceptarPadre.Size = new System.Drawing.Size(148, 41);
+            this.btnAceptarPadre.TabIndex = 22;
+            this.btnAceptarPadre.Text = "Aceptar";
+            this.btnAceptarPadre.UseVisualStyleBackColor = true;
+            this.btnAceptarPadre.Click += new System.EventHandler(this.btnAceptarPadre_Click);
+            // 
             // UsuarioPadres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1205, 418);
             this.Controls.Add(this.gpbDatosPadre);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.gpbDatosMadre);
             this.Name = "UsuarioPadres";
-            this.Size = new System.Drawing.Size(1205, 418);
+            this.Text = "Asignación de Padres y Madres a Alumnos";
             this.gpbDatosMadre.ResumeLayout(false);
             this.gpbDatosMadre.PerformLayout();
             this.gpbDatosPadre.ResumeLayout(false);

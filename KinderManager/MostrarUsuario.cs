@@ -74,12 +74,6 @@ namespace KinderManager
            else
               tablaMadre.Rows.Add(Procesos_Alumno.obtenerMadre(alumno.getMadre()));
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
-        }
        
     }
 }
