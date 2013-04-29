@@ -77,19 +77,19 @@ namespace KinderManager
             {
                 case 1:
                     Dispose (); 
-                    new EditarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId())));
+                    VentanaPrincipal.Interfaz.Controls.Add (new EditarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId()))));
                     break;
                 case 2:
                     Dispose (); 
-                    new MostrarUsuario(alumno);
+                    VentanaPrincipal.Interfaz.Controls.Add (new MostrarUsuario(alumno));
                     break;
                 case 3:
                     Dispose (); 
-                    new EliminarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId())));
+                    VentanaPrincipal.Interfaz.Controls.Add (new EliminarUsuario(alumno, (Procesos_Alumno.ObtenerAdeudos(alumno.getId()))));
                     break;
                 case 4:
                     Dispose (); 
-                    new UsuarioPadres(alumno);
+                    VentanaPrincipal.Interfaz.Controls.Add (new UsuarioPadres(alumno));
                     break;
                 case 5:
                     if (MessageBox.Show ( "¿Seguro que desea dar de alta a este alumno: " + alumno.getNombre () + " " + alumno.getApellido(),

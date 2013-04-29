@@ -138,5 +138,11 @@ namespace KinderManager
             if (chequeo == false)
                 MessageBox.Show("Error al intentar asignar la mamá al alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
+        }
     }
 }

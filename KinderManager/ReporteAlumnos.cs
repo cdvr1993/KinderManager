@@ -38,8 +38,8 @@ namespace KinderManager
         }
 
         private void btnCancelar_Click ( object sender, EventArgs e ) {
-            Dispose ();
-            VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
         }
     }
 }

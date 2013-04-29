@@ -48,19 +48,18 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablaAdmin = new System.Windows.Forms.DataGridView();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblDatosAlumno = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblAdministracion = new System.Windows.Forms.Label();
-            this.lblMadre = new System.Windows.Forms.Label();
-            this.lblPadre = new System.Windows.Forms.Label();
             this.Modalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adeudos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Acta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Copy_Acta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Copy_Cartilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CURP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblDatosAlumno = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblAdministracion = new System.Windows.Forms.Label();
+            this.lblMadre = new System.Windows.Forms.Label();
+            this.lblPadre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPadre)).BeginInit();
@@ -246,25 +245,56 @@
             this.tablaAdmin.Size = new System.Drawing.Size(835, 45);
             this.tablaAdmin.TabIndex = 8;
             // 
-            // btnAceptar
+            // Modalidad
             // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(353, 312);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(148, 41);
-            this.btnAceptar.TabIndex = 15;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.Modalidad.HeaderText = "Modalidad de pago";
+            this.Modalidad.Name = "Modalidad";
+            this.Modalidad.ReadOnly = true;
+            this.Modalidad.Width = 250;
+            // 
+            // Adeudos
+            // 
+            this.Adeudos.HeaderText = "Adeudo Total";
+            this.Adeudos.Name = "Adeudos";
+            this.Adeudos.ReadOnly = true;
+            this.Adeudos.Width = 102;
+            // 
+            // Acta
+            // 
+            this.Acta.HeaderText = "Acta";
+            this.Acta.Name = "Acta";
+            this.Acta.ReadOnly = true;
+            // 
+            // Copy_Acta
+            // 
+            this.Copy_Acta.HeaderText = "Copias de Acta";
+            this.Copy_Acta.Name = "Copy_Acta";
+            this.Copy_Acta.ReadOnly = true;
+            this.Copy_Acta.Width = 120;
+            // 
+            // Copy_Cartilla
+            // 
+            this.Copy_Cartilla.HeaderText = "Copias de Cartilla";
+            this.Copy_Cartilla.Name = "Copy_Cartilla";
+            this.Copy_Cartilla.ReadOnly = true;
+            this.Copy_Cartilla.Width = 120;
+            // 
+            // CURP
+            // 
+            this.CURP.HeaderText = "CURP";
+            this.CURP.Name = "CURP";
+            this.CURP.ReadOnly = true;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(652, 312);
+            this.btnCancelar.Location = new System.Drawing.Point(520, 307);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(148, 41);
             this.btnCancelar.TabIndex = 16;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Regresar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblDatosAlumno
             // 
@@ -316,65 +346,23 @@
             this.lblPadre.TabIndex = 21;
             this.lblPadre.Text = "Datos Padre";
             // 
-            // Modalidad
-            // 
-            this.Modalidad.HeaderText = "Modalidad de pago";
-            this.Modalidad.Name = "Modalidad";
-            this.Modalidad.ReadOnly = true;
-            this.Modalidad.Width = 250;
-            // 
-            // Adeudos
-            // 
-            this.Adeudos.HeaderText = "Adeudo Total";
-            this.Adeudos.Name = "Adeudos";
-            this.Adeudos.ReadOnly = true;
-            this.Adeudos.Width = 102;
-            // 
-            // Acta
-            // 
-            this.Acta.HeaderText = "Acta";
-            this.Acta.Name = "Acta";
-            this.Acta.ReadOnly = true;
-            // 
-            // Copy_Acta
-            // 
-            this.Copy_Acta.HeaderText = "Copias de Acta";
-            this.Copy_Acta.Name = "Copy_Acta";
-            this.Copy_Acta.ReadOnly = true;
-            this.Copy_Acta.Width = 120;
-            // 
-            // Copy_Cartilla
-            // 
-            this.Copy_Cartilla.HeaderText = "Copias de Cartilla";
-            this.Copy_Cartilla.Name = "Copy_Cartilla";
-            this.Copy_Cartilla.ReadOnly = true;
-            this.Copy_Cartilla.Width = 120;
-            // 
-            // CURP
-            // 
-            this.CURP.HeaderText = "CURP";
-            this.CURP.Name = "CURP";
-            this.CURP.ReadOnly = true;
-            // 
             // MostrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 364);
             this.Controls.Add(this.lblPadre);
             this.Controls.Add(this.lblMadre);
             this.Controls.Add(this.lblAdministracion);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblDatosAlumno);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tablaAdmin);
             this.Controls.Add(this.tablaMadre);
             this.Controls.Add(this.tablaPadre);
             this.Controls.Add(this.tablaDir);
             this.Controls.Add(this.tablaUser);
             this.Name = "MostrarUsuario";
-            this.Text = "Información del Alumno";
+            this.Size = new System.Drawing.Size(1161, 364);
             ((System.ComponentModel.ISupportInitialize)(this.tablaUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPadre)).EndInit();
@@ -398,7 +386,6 @@
         private System.Windows.Forms.DataGridView tablaPadre;
         private System.Windows.Forms.DataGridView tablaMadre;
         private System.Windows.Forms.DataGridView tablaAdmin;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblDatosAlumno;
         private System.Windows.Forms.Label lblDireccion;

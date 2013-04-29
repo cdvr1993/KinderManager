@@ -32,7 +32,8 @@ namespace KinderManager
  
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose(); 
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
