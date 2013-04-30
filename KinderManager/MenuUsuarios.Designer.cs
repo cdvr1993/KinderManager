@@ -40,6 +40,7 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReferencias = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnReferencias);
             this.groupBox3.Controls.Add(this.btnAsignar);
             this.groupBox3.Location = new System.Drawing.Point(22, 169);
             this.groupBox3.Name = "groupBox3";
@@ -133,7 +135,7 @@
             // btnAsignar
             // 
             this.btnAsignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignar.Location = new System.Drawing.Point(230, 19);
+            this.btnAsignar.Location = new System.Drawing.Point(118, 19);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(197, 65);
             this.btnAsignar.TabIndex = 5;
@@ -183,16 +185,27 @@
             // regresarToolStripMenuItem
             // 
             this.regresarToolStripMenuItem.Name = "regresarToolStripMenuItem";
-            this.regresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.regresarToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.regresarToolStripMenuItem.Text = "Regresar";
             this.regresarToolStripMenuItem.Click += new System.EventHandler(this.regresarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // btnReferencias
+            // 
+            this.btnReferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReferencias.Location = new System.Drawing.Point(341, 19);
+            this.btnReferencias.Name = "btnReferencias";
+            this.btnReferencias.Size = new System.Drawing.Size(197, 65);
+            this.btnReferencias.TabIndex = 6;
+            this.btnReferencias.Text = "Asignar Referencias";
+            this.btnReferencias.UseVisualStyleBackColor = true;
+            this.btnReferencias.Click += new System.EventHandler(this.btnReferencias_Click);
             // 
             // MenuUsuarios
             // 
@@ -234,5 +247,6 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regresarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button btnReferencias;
     }
 }

@@ -54,5 +54,11 @@ namespace KinderManager
             Dispose ();
             VentanaPrincipal.Interfaz.Controls.Add ( new Menu () );
         }
+
+        private void btnReferencias_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new Referencias());
+        }
     }
 }

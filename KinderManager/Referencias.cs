@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace KinderManager
 {
-    public partial class Ventana_P : UserControl
+    public partial class Referencias : UserControl
     {
         List<int> t1_id_list;
         List<int> t1_id_selectlist;
 
-        public Ventana_P()
+        public Referencias()
         {
             InitializeComponent();
             t1_id_list = new List<int>();
@@ -348,6 +348,18 @@ namespace KinderManager
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void regresarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void regresarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
         }
 
        

@@ -127,11 +127,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventana_P.cs">
+    <Compile Include="Referencias.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventana_P.Designer.cs">
-      <DependentUpon>Ventana_P.cs</DependentUpon>
+    <Compile Include="Referencias.Designer.cs">
+      <DependentUpon>Referencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventana_Padres.cs">
       <SubType>UserControl</SubType>
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_P.resx">
-      <DependentUpon>Ventana_P.cs</DependentUpon>
+    <EmbeddedResource Include="Referencias.resx">
+      <DependentUpon>Referencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Padres.resx">
       <DependentUpon>Ventana_Padres.cs</DependentUpon>
