@@ -29,6 +29,7 @@
             this.btnPagos = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnPadres = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnUsuarios
@@ -72,10 +73,21 @@
             this.btnPadres.UseVisualStyleBackColor = true;
             this.btnPadres.Click += new System.EventHandler(this.btnPadres_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(95, 54);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(584, 34);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "¡BIENVENIDO A KINDERMANAGER!";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnPadres);
             this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.btnUsuarios);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Button btnPagos;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnPadres;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
