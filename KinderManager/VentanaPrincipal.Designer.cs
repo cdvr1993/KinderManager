@@ -25,17 +25,15 @@
         /// el contenido del método con el editor de código.
         /// </summary>
         private void InitializeComponent () {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
             this.SuspendLayout();
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VentanaPrincipal";
+            this.ShowIcon = false;
             this.Text = "Kinder Manager";
             this.ResumeLayout(false);
 
