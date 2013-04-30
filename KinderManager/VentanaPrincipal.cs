@@ -20,6 +20,7 @@ namespace KinderManager
             this.Controls.Add ( new Menu () );
             this.FormClosed += VentanaPrincipal_FormClosed;
             this.CenterToScreen ();
+        
         }
 
         void VentanaPrincipal_FormClosed ( object sender, FormClosedEventArgs e ) {
