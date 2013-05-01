@@ -51,13 +51,13 @@ namespace KinderManager
             this.txtCURP.Text = rowCurp[3];
 
             if (alumno.getGrupo().Equals("No") == true)
-                this.cmbGroup.SelectedIndex = 0;
+                this.cmbGrupo.SelectedIndex = 0;
             if (alumno.getGrupo().Equals("A ") == true)
-                this.cmbGroup.SelectedIndex = 1;
+                this.cmbGrupo.SelectedIndex = 1;
             if (alumno.getGrupo().Equals("B ") == true)
-                this.cmbGroup.SelectedIndex = 2;
+                this.cmbGrupo.SelectedIndex = 2;
             if (alumno.getGrupo().Equals("C ") == true)
-                this.cmbGroup.SelectedIndex = 3;
+                this.cmbGrupo.SelectedIndex = 3;
             this.cmbPago.SelectedIndex = alumno.getModalidad();
             this.txtNombre.Text = alumno.getNombre().ToString();
             this.txtApellido.Text = alumno.getApellido().ToString();
@@ -75,10 +75,16 @@ namespace KinderManager
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            bool chequeo;
+            chequeo = validaciones();
+            if (chequeo == false)
+            {
+                return;
+            }
             int Mes = cmbMes.SelectedIndex + 1;
             String fecha = cmbDay.SelectedItem.ToString() + "/" + Mes.ToString() + "/" + cmbYear.SelectedItem.ToString();
             DateTime nacimiento = Convert.ToDateTime(fecha);
-            Alumno nuevo = new Alumno(alumno.getId(), txtNombre.Text, txtApellido.Text, nacimiento, cmbSangre.SelectedItem.ToString(), txtCalle.Text, txtColonia.Text, txtTel.Text, alumno.getPadre(), alumno.getMadre(), Convert.ToInt16(cmbGrado.SelectedItem), cmbGroup.SelectedItem.ToString().Trim(), cmbPago.SelectedIndex);
+            Alumno nuevo = new Alumno(alumno.getId(), txtNombre.Text, txtApellido.Text, nacimiento, cmbSangre.SelectedItem.ToString(), txtCalle.Text, txtColonia.Text, txtTel.Text, alumno.getPadre(), alumno.getMadre(), Convert.ToInt16(cmbGrado.SelectedItem), cmbGrupo.SelectedItem.ToString().Trim(), cmbPago.SelectedIndex);
 
             Boolean check = Procesos_Alumno.ModificarAlumno(nuevo, adeudos);
             if (check == false) // Uno de lso errores. Actualizar Excel
@@ -111,6 +117,17 @@ namespace KinderManager
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            // Form1.main.Controls.Add(new wUsuario());
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
+        }
 
         private Boolean validaciones()
         {
@@ -120,7 +137,7 @@ namespace KinderManager
                 return false;
             }
 
-            if (this.cmbGrado.SelectedIndex == 0 && this.cmbGroup.SelectedIndex != 0)
+            if (this.cmbGrado.SelectedIndex == 0 && this.cmbGrupo.SelectedIndex != 0)
             {
                 {
                     MessageBox.Show("Seleccione NO para el Grupo de Pre-Kinder (Grupo es 0)", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -128,6 +145,13 @@ namespace KinderManager
                 }
             }
 
+            if (this.cmbGrado.SelectedIndex != 0 && this.cmbGrupo.SelectedIndex == 0)
+            {
+                {
+                    MessageBox.Show("Seleccione un grupo para grados distintos a '0' ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
             if (this.cmbGrado.SelectedIndex == 0 && !(this.cmbPago.SelectedIndex == 0 || this.cmbPago.SelectedIndex == 1))
             {
                 {
@@ -145,12 +169,6 @@ namespace KinderManager
             }
 
             return true;
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            // Form1.main.Controls.Add(new wUsuario());
         }
     }
 } 

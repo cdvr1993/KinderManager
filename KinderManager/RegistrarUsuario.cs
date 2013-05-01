@@ -109,6 +109,13 @@ namespace KinderManager
                 }
             }
 
+            if (this.cmbGrado.SelectedIndex != 0 && this.cmbGrupo.SelectedIndex == 0)
+            {
+                {
+                    MessageBox.Show("Seleccione un grupo para grados distintos a '0' ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
             if (this.cmbGrado.SelectedIndex == 0 && !(this.cmbPago.SelectedIndex == 0 || this.cmbPago.SelectedIndex == 1))
             {
                 {
