@@ -533,6 +533,7 @@
             this.combo2_busqueda.Name = "combo2_busqueda";
             this.combo2_busqueda.Size = new System.Drawing.Size(121, 21);
             this.combo2_busqueda.TabIndex = 8;
+            this.combo2_busqueda.SelectedIndex = 0;
             // 
             // l2_busquedareferencias
             // 

@@ -59,25 +59,43 @@ namespace KinderManager
                 }
                 
                 Sql con = new Sql();
-                String query = "", query2 = "";
+                String query = "", query2 = "", query3 = "";
 
                 if (cmb1_MH.SelectedIndex == 0) { query = "SELECT MAX(Id_madre) FROM Madres_alumno";
                 query2 = "INSERT INTO Madres_alumno ";
+                query3 = "SELECT * FROM Madres_alumno ";
                 }
-                else {query = "SELECT MAX(Id_padre) FROM Padres_alumno";
-                query2 = "INSERT INTO Padres_alumno";}
+                else {query = "SELECT MAX(Id_padre) FROM Padres_alumno ";
+                query2 = "INSERT INTO Padres_alumno";
+                query3 = "SELECT * FROM Padres_alumno ";
+                }
 
                 SqlDataReader r = con.getReader(query);
                 r.Read();
 
-                int id = (int)r.GetInt32(0) + 1;
-                Console.WriteLine(id);
+                int id = 0;
+
+                if (r.Read())
+                    if (!r.IsDBNull(0))
+                        id = r.GetInt32(0);
+
+                Sql con_check = new Sql();
+                Console.WriteLine(query3 + "WHERE Nombre = '" + txt1_nombre.Text + "' "
+                    + "AND Apellido = '" + txt1_apellido.Text + "' AND Email = '" + txt1_email.Text + "'");
+                SqlDataReader check = con_check.getReader(query3 + "WHERE Nombre = '" + txt1_nombre.Text + "' "
+                    + "AND Apellido = '" + txt1_apellido.Text + "' AND Email = '" + txt1_email.Text + "'");
+
+                if (check.Read())
+                {
+                    if (!check.IsDBNull(0))
+                    {
+                        MessageBox.Show("Este usuario ya ha sido registrado registrado");
+                        return;
+                    }
+                }
+
 
                 Sql con2 = new Sql();
-
-                Console.WriteLine(query2 + " VALUES (" + id + ", \'" + parent.getNombre() + "\',\'"
-                    + parent.getApellido() + "\', \'" + parent.getOcupacion() + "\', \'" + parent.getEmpresa() +
-                "\', \'" + parent.getTelefono() + "\', \'" + parent.getCelular() + "\', \'" + parent.getEmail() + "\')");
 
                 if (con2.executeQuery(query2 + " VALUES (" + id + ", \'" + parent.getNombre() + "\',\'"
                     + parent.getApellido() + "\', \'" + parent.getOcupacion() + "\', \'" + parent.getEmpresa() +

@@ -68,12 +68,27 @@ namespace KinderManager
 
                 Sql con = new Sql();
                 SqlDataReader r = con.getReader("SELECT MAX(Id_ref) FROM Referencias");
-                r.Read();
-
-                int id = (int)r.GetInt32(0) + 1;
-                Console.WriteLine(id);
+                int id = 0;
+                
+                if(r.Read())
+                    if (!r.IsDBNull(0))
+                        id = r.GetInt32(0);
 
                 Sql con2 = new Sql();
+
+                Sql con_check = new Sql();
+                SqlDataReader check = con_check.getReader("SELECT * FROM Referencias WHERE Nombre = '" + 
+                   txt_nombre.Text + "' AND Apellido = '" + txt_apellido.Text + "' AND Calle = '" + 
+                   txt_calle.Text + "'");
+
+                if (check.Read())
+                {
+                    if (!check.IsDBNull(0))
+                    {
+                        MessageBox.Show("Este usuario ya ha sido registrado registrado");
+                        return;
+                    }
+                }
 
                 if(con2.executeQuery("INSERT INTO Referencias VALUES (" + id + ", \'" + txt_nombre.Text + "\',\'"
                     + txt_apellido.Text + "\', \'" + txt_calle.Text + "\', \'" + txt_colonia.Text +
@@ -96,9 +111,8 @@ namespace KinderManager
 
                 Console.WriteLine(query);
                 Sql con3 = new Sql();
-                SqlDataReader r3 = con3.getReader(query);
+                con3.executeQuery(query);
 
-                MessageBox.Show("Referencia registrada con éxito");
 
             }
             else if (sender.Equals(b_agregarref))
@@ -188,6 +202,7 @@ namespace KinderManager
                 SqlDataReader r;
 
                 dataGridView2.Rows.Clear();
+                if (dataGridView1.Rows.Count == 0) return;
 
                 int id_ref = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
 
@@ -208,6 +223,8 @@ namespace KinderManager
                 SqlDataReader r;
 
                 dataGridView1.Rows.Clear();
+
+                if (dataGridView2.Rows.Count == 0) return;
 
                 int id_alum = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
 

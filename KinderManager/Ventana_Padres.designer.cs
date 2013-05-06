@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            
             // 
             // tabControl1
             // 
@@ -130,6 +131,7 @@
             this.cmb1_MH.Name = "cmb1_MH";
             this.cmb1_MH.Size = new System.Drawing.Size(122, 21);
             this.cmb1_MH.TabIndex = 16;
+            this.cmb1_MH.SelectedIndex = 0;
             // 
             // b1_actualizar
             // 
@@ -387,6 +389,7 @@
             this.cmb2_selec.Name = "cmb2_selec";
             this.cmb2_selec.Size = new System.Drawing.Size(121, 21);
             this.cmb2_selec.TabIndex = 3;
+            this.cmb2_selec.SelectedIndex = 0;
             // 
             // l3_apellido
             // 
