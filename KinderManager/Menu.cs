@@ -30,5 +30,11 @@ namespace KinderManager
             Dispose ();
             VentanaPrincipal.Interfaz.Controls.Add ( new Ventana_Padres () );
         }
+
+        private void btnAdmins_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            VentanaPrincipal.Interfaz.Controls.Add(new MenuAdmin());
+        }
     }
 }

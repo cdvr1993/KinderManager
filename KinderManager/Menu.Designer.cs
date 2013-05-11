@@ -30,6 +30,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnPadres = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnAdmins = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnUsuarios
@@ -65,7 +66,7 @@
             // btnPadres
             // 
             this.btnPadres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPadres.Location = new System.Drawing.Point(265, 218);
+            this.btnPadres.Location = new System.Drawing.Point(123, 216);
             this.btnPadres.Name = "btnPadres";
             this.btnPadres.Size = new System.Drawing.Size(197, 65);
             this.btnPadres.TabIndex = 3;
@@ -83,12 +84,24 @@
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "¡BIENVENIDO A KINDERMANAGER!";
             // 
+            // btnAdmins
+            // 
+            this.btnAdmins.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmins.Location = new System.Drawing.Point(409, 216);
+            this.btnAdmins.Name = "btnAdmins";
+            this.btnAdmins.Size = new System.Drawing.Size(197, 65);
+            this.btnAdmins.TabIndex = 5;
+            this.btnAdmins.Text = "Administradores";
+            this.btnAdmins.UseVisualStyleBackColor = true;
+            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnAdmins);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnPadres);
             this.Controls.Add(this.btnPagos);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnPadres;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnAdmins;
     }
 }

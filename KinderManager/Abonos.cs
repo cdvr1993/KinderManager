@@ -9,9 +9,6 @@ namespace KinderManager
 {
     class Abonos
     {
-        private int idAbono;
-        private float monto;
-        private DateTime fecha;
 
         public Abonos () { }
 

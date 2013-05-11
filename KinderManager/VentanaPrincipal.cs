@@ -19,7 +19,7 @@ namespace KinderManager
             Image fondo = Image.FromFile ( "Fondo.png" );
             this.BackgroundImage = fondo;
             this.ControlAdded += VentanaPrincipal_ControlAdded;
-            this.Controls.Add ( new Menu () );
+            this.Controls.Add ( new AdminPass () );
             this.FormClosed += VentanaPrincipal_FormClosed;
             this.CenterToScreen ();
         }

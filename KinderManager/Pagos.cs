@@ -36,7 +36,7 @@ namespace KinderManager
                 pago.liquidado = (Convert.ToInt32(r["liquidado"]) == 1) ? true : false;
                 return pago;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                // Program.log.WriteLine(e.Message);
             }
@@ -62,7 +62,7 @@ namespace KinderManager
                 if (tmp.Count > 0)
                     return tmp;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 //Program.log.WriteLine(e.Message);
             }
@@ -93,7 +93,7 @@ namespace KinderManager
                 if (tmp.Count > 0)
                     return tmp;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                // Program.log.WriteLine(e.Message);
             }
@@ -143,7 +143,7 @@ namespace KinderManager
                 if (tmp.Count > 0)
                     return tmp;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 //Program.log.WriteLine(e.Message);
             }
@@ -180,7 +180,7 @@ namespace KinderManager
                 }
                 con.closeConnection();
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                // Program.log.WriteLine(e.Message);
             }
@@ -204,7 +204,7 @@ namespace KinderManager
                 }
                 con.closeConnection();
             }
-            catch (SqlException e){
+            catch (SqlException){
                 //Program.log.WriteLine(e.Message);
             }
             return false;

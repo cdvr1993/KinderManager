@@ -154,7 +154,7 @@ namespace KinderManager
                 dataGridView1.Rows.Clear();
 
                 Sql con = new Sql();
-                String table = "", query, id = "";
+                String table = "", id = "";
 
                 if (cmb2_selec.SelectedIndex == 0)
                 {

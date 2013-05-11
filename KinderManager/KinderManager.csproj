@@ -46,6 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abonos.cs" />
+    <Compile Include="ActualizarContra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActualizarContra.Designer.cs">
+      <DependentUpon>ActualizarContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPass.Designer.cs">
+      <DependentUpon>AdminPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alumno.cs" />
     <Compile Include="BuscarUsuario.cs">
       <SubType>UserControl</SubType>
@@ -77,6 +89,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPagos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +115,7 @@
     </Compile>
     <Compile Include="Padres.cs" />
     <Compile Include="Pagos.cs" />
+    <Compile Include="Procesos_Admin.cs" />
     <Compile Include="Procesos_Alumno.cs" />
     <Compile Include="Pruebas.cs" />
     <Compile Include="Referencia.cs" />
@@ -105,6 +124,12 @@
     </Compile>
     <Compile Include="RegistrarUsuario.Designer.cs">
       <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RegistroAdmin.Designer.cs">
+      <DependentUpon>RegistroAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteAlumnos.cs">
       <SubType>UserControl</SubType>
@@ -139,6 +164,12 @@
     <Compile Include="Ventana_Padres.designer.cs">
       <DependentUpon>Ventana_Padres.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActualizarContra.resx">
+      <DependentUpon>ActualizarContra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPass.resx">
+      <DependentUpon>AdminPass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarUsuario.resx">
       <DependentUpon>BuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPagos.resx">
       <DependentUpon>MenuPagos.cs</DependentUpon>
@@ -174,6 +208,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrarUsuario.resx">
       <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroAdmin.resx">
+      <DependentUpon>RegistroAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAlumnos.resx">
       <DependentUpon>ReporteAlumnos.cs</DependentUpon>

@@ -632,9 +632,6 @@
         private System.Windows.Forms.TextBox txt2_buqueda;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dg_Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
