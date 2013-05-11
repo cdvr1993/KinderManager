@@ -37,7 +37,7 @@ namespace KinderManager
             b2_verref.Click += new EventHandler(this.buttons_Click);
             b2_elimref.Click += new EventHandler(this.buttons_Click);
             b2_cargaref.Click += new EventHandler(this.buttons_Click);
-            b1_actref.Click += new EventHandler(this.buttons_Click); ;
+            b1_actref.Click += new EventHandler(this.buttons_Click);
         }
 
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -347,39 +347,13 @@ namespace KinderManager
             return false;
         }
 
-        private void Ventana_P_Load(object sender, EventArgs e)
-        {
-
+        private void regresarToolStripMenuItem_Click ( object sender, EventArgs e ) {
+            Dispose ();
+            VentanaPrincipal.Interfaz.Controls.Add ( new MenuUsuarios () );
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
+        private void salirToolStripMenuItem_Click ( object sender, EventArgs e ) {
+            Application.Exit ();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void regresarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void regresarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            VentanaPrincipal.Interfaz.Controls.Add(new MenuUsuarios());
-        }
-
-       
-
     }
 }

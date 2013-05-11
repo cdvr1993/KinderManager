@@ -33,6 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnReferencias = new System.Windows.Forms.Button();
             this.btnAsignar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnReporte = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnReferencias = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,6 +132,17 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             // 
+            // btnReferencias
+            // 
+            this.btnReferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReferencias.Location = new System.Drawing.Point(341, 19);
+            this.btnReferencias.Name = "btnReferencias";
+            this.btnReferencias.Size = new System.Drawing.Size(197, 65);
+            this.btnReferencias.TabIndex = 6;
+            this.btnReferencias.Text = "Asignar Referencias";
+            this.btnReferencias.UseVisualStyleBackColor = true;
+            this.btnReferencias.Click += new System.EventHandler(this.btnReferencias_Click);
+            // 
             // btnAsignar
             // 
             this.btnAsignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,21 +207,11 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // btnReferencias
-            // 
-            this.btnReferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReferencias.Location = new System.Drawing.Point(341, 19);
-            this.btnReferencias.Name = "btnReferencias";
-            this.btnReferencias.Size = new System.Drawing.Size(197, 65);
-            this.btnReferencias.TabIndex = 6;
-            this.btnReferencias.Text = "Asignar Referencias";
-            this.btnReferencias.UseVisualStyleBackColor = true;
-            this.btnReferencias.Click += new System.EventHandler(this.btnReferencias_Click);
-            // 
             // MenuUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

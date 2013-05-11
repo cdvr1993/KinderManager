@@ -20,13 +20,6 @@ namespace KinderManager
             //modificacionPago ();
         }
 
-        private void modificacionPago () {
-            List<Pagos> tmp1 = Pagos.getAllPagosByRange ( new DateTime ( 2013, 4, 1 ), new DateTime ( 2013, 4, 30 ) );
-            tmp1[0].Total = 3500;
-            tmp1[0].Subtotal = 4000;
-            tmp1[0].Descuento = 500;
-        }
-
         private void generacionPagos () {
             Pagos.generarPagosAnuales ();
         }

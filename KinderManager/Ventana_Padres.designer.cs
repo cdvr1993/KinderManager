@@ -74,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            
             // 
             // tabControl1
             // 
@@ -131,7 +130,6 @@
             this.cmb1_MH.Name = "cmb1_MH";
             this.cmb1_MH.Size = new System.Drawing.Size(122, 21);
             this.cmb1_MH.TabIndex = 16;
-            this.cmb1_MH.SelectedIndex = 0;
             // 
             // b1_actualizar
             // 
@@ -389,7 +387,6 @@
             this.cmb2_selec.Name = "cmb2_selec";
             this.cmb2_selec.Size = new System.Drawing.Size(121, 21);
             this.cmb2_selec.TabIndex = 3;
-            this.cmb2_selec.SelectedIndex = 0;
             // 
             // l3_apellido
             // 
@@ -440,14 +437,14 @@
             // regresarToolStripMenuItem
             // 
             this.regresarToolStripMenuItem.Name = "regresarToolStripMenuItem";
-            this.regresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.regresarToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.regresarToolStripMenuItem.Text = "Regresar";
             this.regresarToolStripMenuItem.Click += new System.EventHandler(this.regresarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -455,6 +452,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Ventana_Padres";

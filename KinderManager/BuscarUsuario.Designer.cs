@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 313);
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -131,7 +131,7 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Name = "BuscarUsuario";
-            this.Text = "Búsqueda de Alumno";
+            this.Size = new System.Drawing.Size(873, 313);
             this.ResumeLayout(false);
             this.PerformLayout();
 

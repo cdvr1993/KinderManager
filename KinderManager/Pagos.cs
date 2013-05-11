@@ -125,7 +125,7 @@ namespace KinderManager
             return null;
         }
 
-        public static List<Pagos> getAllPagosByRange(DateTime first, DateTime final)
+        public static List<Pagos> getAllPagosInRange(DateTime first, DateTime final)
         {
             //Esta función devuelve los pagos en un rango determinado de fechas, puede usarse para ver los pagos que van del mes en curso.
             try

@@ -77,8 +77,9 @@
             this.combo2_busqueda = new System.Windows.Forms.ComboBox();
             this.l2_busquedareferencias = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.regresarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1.SuspendLayout();
             this.tabc_ref.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -115,15 +116,13 @@
             this.tabPage1.Controls.Add(this.l_parentesco);
             this.tabPage1.Controls.Add(this.mtxt_telefono);
             this.tabPage1.Controls.Add(this.l_celular);
-            this.tabPage1.Controls.Add(this.menuStrip1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 340);
+            this.tabPage1.Size = new System.Drawing.Size(732, 334);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registro y Actualizado";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // b1_actref
             // 
@@ -345,10 +344,10 @@
             // 
             this.tabc_ref.Controls.Add(this.tabPage1);
             this.tabc_ref.Controls.Add(this.tabPage2);
-            this.tabc_ref.Location = new System.Drawing.Point(1, 1);
+            this.tabc_ref.Location = new System.Drawing.Point(3, 27);
             this.tabc_ref.Name = "tabc_ref";
             this.tabc_ref.SelectedIndex = 0;
-            this.tabc_ref.Size = new System.Drawing.Size(740, 366);
+            this.tabc_ref.Size = new System.Drawing.Size(740, 360);
             this.tabc_ref.TabIndex = 30;
             // 
             // tabPage2
@@ -369,11 +368,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(732, 340);
+            this.tabPage2.Size = new System.Drawing.Size(732, 334);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Busqueda y Borrado";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // b2_cargaref
             // 
@@ -435,7 +433,6 @@
             this.b2_veralum.TabIndex = 13;
             this.b2_veralum.Text = "Ver Alumnos";
             this.b2_veralum.UseVisualStyleBackColor = true;
-            this.b2_veralum.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView2
             // 
@@ -533,7 +530,6 @@
             this.combo2_busqueda.Name = "combo2_busqueda";
             this.combo2_busqueda.Size = new System.Drawing.Size(121, 21);
             this.combo2_busqueda.TabIndex = 8;
-            this.combo2_busqueda.SelectedIndex = 0;
             // 
             // l2_busquedareferencias
             // 
@@ -547,37 +543,45 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regresarToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.archivoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(726, 24);
-            this.menuStrip1.TabIndex = 32;
+            this.menuStrip1.Size = new System.Drawing.Size(739, 24);
+            this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regresarToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // regresarToolStripMenuItem
             // 
-            this.regresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regresarToolStripMenuItem1});
             this.regresarToolStripMenuItem.Name = "regresarToolStripMenuItem";
-            this.regresarToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.regresarToolStripMenuItem.Text = "Archivo";
+            this.regresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.regresarToolStripMenuItem.Text = "Regresar";
             this.regresarToolStripMenuItem.Click += new System.EventHandler(this.regresarToolStripMenuItem_Click);
             // 
-            // regresarToolStripMenuItem1
+            // salirToolStripMenuItem
             // 
-            this.regresarToolStripMenuItem1.Name = "regresarToolStripMenuItem1";
-            this.regresarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.regresarToolStripMenuItem1.Text = "Regresar";
-            this.regresarToolStripMenuItem1.Click += new System.EventHandler(this.regresarToolStripMenuItem1_Click);
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // Ventana_P
+            // Referencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tabc_ref);
-            this.Name = "Ventana_P";
-            this.Size = new System.Drawing.Size(739, 369);
-            this.Load += new System.EventHandler(this.Ventana_P_Load);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "Referencias";
+            this.Size = new System.Drawing.Size(739, 386);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabc_ref.ResumeLayout(false);
@@ -588,6 +592,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -645,7 +650,8 @@
         private System.Windows.Forms.Button b1_actref;
         private System.Windows.Forms.Button b2_cargaref;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regresarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem regresarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

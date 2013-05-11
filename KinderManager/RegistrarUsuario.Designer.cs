@@ -532,7 +532,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 425);
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpbAdmin);
             this.Controls.Add(this.gpbDireccion);
@@ -540,7 +540,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Name = "RegistrarUsuario";
-            this.Text = "Registro de Alumno Nuevo";
+            this.Size = new System.Drawing.Size(1231, 425);
             this.gpbDatos.ResumeLayout(false);
             this.gpbDatos.PerformLayout();
             this.gpbDireccion.ResumeLayout(false);

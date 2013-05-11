@@ -16,6 +16,8 @@ namespace KinderManager
         public VentanaPrincipal () {
             Interfaz = this;
             InitializeComponent ();
+            Image fondo = Image.FromFile ( "Fondo.png" );
+            this.BackgroundImage = fondo;
             this.ControlAdded += VentanaPrincipal_ControlAdded;
             this.Controls.Add ( new Menu () );
             this.FormClosed += VentanaPrincipal_FormClosed;
